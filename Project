@@ -1,0 +1,413 @@
+# DataVis
+
+float i;
+PFont f;
+
+void setup(){
+  size (660,250);
+  background (200);
+
+ line(0,170,width,170); 
+ 
+  f = createFont("Arial", 12, true);
+  textFont(f);
+  fill(0);
+  textAlign(CENTER);
+  text("Mean, Max and Min Temperatures in State College on April 10th from 2005 to 2014",width/2,30);
+
+f = createFont("Arial", 10, true);
+   textFont(f);
+   fill(0);
+  text("2005",width/11 +14,239);
+  text("2006",2*width/11 +14,239);
+  text("2007",3*width/11 +14,239);
+  text("2008",4*width/11 +14,239);
+  text("2009",5*width/11 +14,239);
+  text("2010",6*width/11 +14,239);
+  text("2011",7*width/11 +14,239);
+  text("2012",8*width/11 +13,239);
+  text("2013",9*width/11 +12,239);
+  text("2014",10*width/11 +12,239);
+}
+
+
+void draw(){
+
+  stroke(220);
+ //strokeWeight(0.001);
+  
+  for (i = 0; i < height; i += 10){
+  line(0, i, width, i);
+  }
+  
+  for (i = 0; i < width - 50; i = i + 1 * (width/11)){
+    line (i, 0, i, height);
+  }
+  
+    noStroke();
+  smooth();
+
+//max temp
+//fill (203,21,76);
+fill (167,3,110);
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+curveVertex (8*width/11,152);
+curveVertex (9*width/11,114);
+curveVertex (10*width/11,128);
+curveVertex (width, 146);
+curveVertex (width, 146);
+vertex(width, 170);
+vertex(0,170);
+endShape();
+
+//mean temp
+fill(255,203,10);
+beginShape();
+curveVertex (0, 154);
+curveVertex (0, 154);
+curveVertex (width/11, 144);
+curveVertex (2*width/11,154);
+curveVertex (3*width/11, 166);
+curveVertex (4*width/11,144);
+curveVertex (5*width/11, 162);
+curveVertex (6*width/11, 152);
+curveVertex (7*width/11, 148);
+curveVertex (8*width/11,158);
+curveVertex (9*width/11,128);
+curveVertex (10*width/11,148);
+curveVertex (width, 158);
+curveVertex (width, 158);
+vertex(width, 170);
+vertex (0, 170);
+endShape(CLOSE);
+
+//min temp
+fill (11,144,160);
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+curveVertex (6*width/11, 166);
+curveVertex (7*width/11, 158);
+curveVertex (8*width/11,166);
+curveVertex (9*width/11,140);
+curveVertex (10*width/11,168);
+curveVertex (width, 170);
+curveVertex (width, 170);
+vertex(0, 170);
+endShape(CLOSE);
+
+fill (80, 220);
+
+if (mouseX > 0 && mouseX < width/11) {
+
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+vertex(width/11, 170);
+vertex(0,170);
+endShape();
+
+} else if (mouseX > width/11 && mouseX < 2*width/11) {
+
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+vertex(2*width/11, 170);
+vertex(0,170);
+endShape(); 
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+vertex(2*width/11, 170);
+endShape(CLOSE);
+
+} else if (mouseX > 2*width/11 && mouseX < 3*width/11) {
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+vertex(3*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+  
+} else if (mouseX > 3*width/11 && mouseX < 4*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+vertex(4*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+
+} else if (mouseX > 4*width/11 && mouseX < 5*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+vertex(5*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+
+} else if (mouseX > 5*width/11 && mouseX < 6*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+vertex(6*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+  
+} else if (mouseX > 6*width/11 && mouseX < 7*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+curveVertex (8*width/11,152);
+vertex(7*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+  
+} else if (mouseX > 7*width/11 && mouseX < 8*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+curveVertex (8*width/11,152);
+curveVertex (9*width/11,114);
+vertex(8*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+  
+} else if (mouseX > 8*width/11 && mouseX < 9*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+curveVertex (8*width/11,152);
+curveVertex (9*width/11,114);
+curveVertex (10*width/11,128);
+vertex(9*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+
+} else if (mouseX > 9*width/11 && mouseX < 10*width/11) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+curveVertex (8*width/11,152);
+curveVertex (9*width/11,114);
+curveVertex (10*width/11,128);
+curveVertex (width, 146);
+vertex(10*width/11, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+vertex(3*width/11, 170);
+vertex(0, 170);
+endShape(CLOSE);
+
+} else if (mouseX > 10*width/11 && mouseX < width) {  
+  
+beginShape();
+curveVertex (0, 138);
+curveVertex (0, 138);
+curveVertex (width/11, 122);
+curveVertex (2*width/11,136);
+curveVertex (3*width/11, 156);
+curveVertex (4*width/11,130);
+curveVertex (5*width/11, 154);
+curveVertex (6*width/11, 138);
+curveVertex (7*width/11, 138);
+curveVertex (8*width/11,152);
+curveVertex (9*width/11,114);
+curveVertex (10*width/11,128);
+curveVertex (width, 146);
+curveVertex (width, 146);
+vertex(width, 170);
+vertex(0,170);
+endShape();
+
+beginShape();
+curveVertex (0, 168);
+curveVertex (0, 168);
+curveVertex (width/11, 164);
+curveVertex (2*width/11,172);
+curveVertex (3*width/11, 176);
+curveVertex (4*width/11,158);
+curveVertex (5*width/11, 166);
+curveVertex (6*width/11, 166);
+curveVertex (7*width/11, 158);
+curveVertex (8*width/11,166);
+curveVertex (9*width/11,140);
+curveVertex (10*width/11,168);
+curveVertex (width, 170);
+curveVertex (width, 170);
+vertex(0, 170);
+endShape(CLOSE);
+  }
+}
